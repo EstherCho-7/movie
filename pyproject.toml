@@ -1,15 +1,23 @@
 [project]
 name = "mov"
-version = "0.1.0"
-description = "Default template for PDM package"
+version = "0.2.0"
+description = "Data Processing of movies"
 authors = [
     {name = "EstherCho-7", email = "dkgkqm777@gmail.com"},
 ]
 dependencies = []
-requires-python = "==3.11.*"
+requires-python = ">=3.9"
 readme = "README.md"
 license = {text = "MIT"}
 
 
 [tool.pdm]
 distribution = false
+
+
+[project.scripts]
+mov-ping = 'mov.cli:ping'
+
+[project.urls]
+Homepage = "https://github.com/EstherCho-7/movie"
+Issues = "https://github.com/EstherCho-7/movie/issues"
