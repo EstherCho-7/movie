@@ -5,7 +5,9 @@ description = "Data Processing of movies"
 authors = [
     {name = "EstherCho-7", email = "dkgkqm777@gmail.com"},
 ]
-dependencies = []
+dependencies = [
+    "requests>=2.32.3",
+]
 requires-python = ">=3.9"
 readme = "README.md"
 license = {text = "MIT"}
@@ -15,6 +17,11 @@ license = {text = "MIT"}
 distribution = true 
 
 
+[tool.pdm.dev-dependencies]
+test = [
+    "pytest>=8.3.2",
+    "pytest-cov>=5.0.0",
+]
 [project.scripts]
 mov-ping = 'mov.cli:ping'
 
