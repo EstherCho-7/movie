@@ -4,6 +4,9 @@
 ```
 # main
 $ pip install git+https://github.com/EstherCho-7/movie.git
+
+# branch
+$ pip install git+https://github.com/EstherCho-7/movie.git@<BRANCH NAME>
 ```
 
 ## Start
