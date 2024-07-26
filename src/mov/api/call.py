@@ -1,5 +1,6 @@
 import requests
 import os
+import pandas as pd
 
 def req(dt="20120101"):
     #url=gen_url('20240720')
@@ -20,7 +21,19 @@ def get_key():
     key=os.getenv("MOVIE_API_KEY")
     return key
 
-def req2dataframe():
+def req2df():
     _, data = req()
     l = data['boxOfficeResult']['dailyBoxOfficeList']
-    return l
+#    l = [
+#            {'rnum':'1', 'rank':'1'},
+#            {'rnum':'2', 'rank':'1'},
+#            {'rnum':'3', 'rank':'1'}
+#
+#            ]
+    df = pd.DataFrame(l)
+    return df 
+
+def list2df():
+    l=req2df()
+    df = pd.DataFrame(l)
+    return df

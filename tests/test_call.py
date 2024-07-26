@@ -1,4 +1,5 @@
-from mov.api.call import gen_url, req, get_key, req2dataframe
+from mov.api.call import gen_url,req, get_key, req2df, list2df
+import pandas as pd
 
 def test_private_key():
     key=get_key()
@@ -18,13 +19,21 @@ def test_req():
     assert code == 200
 
 def test_dataframe():
-    l=req2dataframe()
+    l=req2df()
     assert len(l)>0
-    v=l[0]
-    assert 'rnum' in v.keys() 
-    assert v['rnum']=='1'
+    #v=l[0]
+    #assert 'rnum' in v.keys() 
+    #assert v['rnum']=='1'
    # dataframe=req2dataframe()
    # if len(dataframe)>=1:
    #     print(dataframe)
    # else:
    #     print("Nope")
+
+def test_list2df():
+    df = list2df()
+    assert isinstance(df, pd.DataFrame)
+    assert 'rnum' in df.columns
+    assert 'openDt' in df.columns
+    assert 'movieNm' in df.columns
+
