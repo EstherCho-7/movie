@@ -38,3 +38,12 @@ def list2df():
     l=req2df()
     df = pd.DataFrame(l)
     return df
+
+def save2df():
+    df=list2df()
+    df['load_dt']='20120101'
+    print(df.head(5))
+    # add column 'load_dt' in df (forman: YYYYMMDD)
+    # saving file, partitioning (standard: load_dt)
+    df.to_parquet('~/tmp/test_parquet', partition_cols=['load_dt'])
+    return df

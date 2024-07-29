@@ -1,4 +1,4 @@
-from mov.api.call import gen_url,req, get_key, req2df, list2df
+from mov.api.call import gen_url,req, get_key, req2df, list2df, save2df
 import pandas as pd
 
 def test_private_key():
@@ -37,3 +37,7 @@ def test_list2df():
     assert 'openDt' in df.columns
     assert 'movieNm' in df.columns
 
+def test_save2df():
+    df = save2df()
+    assert isinstance (df, pd.DataFrame)
+    assert 'load_dt' in df.columns
