@@ -23,7 +23,7 @@ def get_key():
     return key
 
 def req2df(load_dt):
-    _, data = req(load_dt)
+    _, data = req()
     l = data['boxOfficeResult']['dailyBoxOfficeList']
 #    l = [
 #            {'rnum':'1', 'rank':'1'},
