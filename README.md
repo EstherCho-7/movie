@@ -18,3 +18,6 @@ $ # option
 $ pdm venv create
 $ source .venv/bin/activate
 ```
+
+### setting enc
+$ export MOVIE_API_KEY = <key>
