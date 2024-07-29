@@ -2,9 +2,9 @@ import requests
 import os
 import pandas as pd
 
-def req(dt="20120101"):
+def req(load_dt="20120101"):
     #url=gen_url('20240720')
-    url=gen_url()
+    url=gen_url(load_dt)
     r=requests.get(url)
     code =  r.status_code
     data = r.json()
@@ -23,7 +23,7 @@ def get_key():
     return key
 
 def req2df(load_dt):
-    _, data = req()
+    _, data = req(load_dt)
     l = data['boxOfficeResult']['dailyBoxOfficeList']
 #    l = [
 #            {'rnum':'1', 'rank':'1'},
@@ -41,7 +41,7 @@ def list2df(load_dt='20120101'):
 
 def save2df(load_dt='20120101'):
     """"airflow"""
-    df=list2df()
+    df=list2df(load_dt)
     df['load_dt']='20120101'
     print(df.head(5))
     # add column 'load_dt' in df (forman: YYYYMMDD)
