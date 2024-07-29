@@ -42,7 +42,7 @@ def list2df(load_dt='20120101'):
 def save2df(load_dt='20120101'):
     """"airflow"""
     df=list2df(load_dt)
-    df['load_dt']='20120101'
+    df['load_dt']=load_dt
     print(df.head(5))
     # add column 'load_dt' in df (forman: YYYYMMDD)
     # saving file, partitioning (standard: load_dt)
