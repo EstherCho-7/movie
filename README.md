@@ -7,7 +7,7 @@ $ pip install git+https://github.com/EstherCho-7/movie.git
 
 # branch
 $ pip install git+https://github.com/EstherCho-7/movie.git@<BRANCH NAME>
-$ $ pip install git+https://github.com/EstherCho-7/movie.git@0.2/api
+$ pip install git+https://github.com/EstherCho-7/movie.git@0.2/api
 
 ## Start
 ```
