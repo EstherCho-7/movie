@@ -18,6 +18,7 @@ def gen_url(dt="20120101"):
     return url 
 
 def get_key():
+    """must get key"""
     key=os.getenv("MOVIE_API_KEY")
     return key
 

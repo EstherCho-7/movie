@@ -1,6 +1,6 @@
 # mov
 
-## install
+## Install
 ```
 # main
 $ pip install git+https://github.com/EstherCho-7/movie.git
@@ -22,5 +22,13 @@ $ pdm venv create
 $ source .venv/bin/activate
 ```
 
-### setting enc
+### Setting enc
+```
+# It's my key
 $ export MOVIE_API_KEY = <key>
+```
+
+### Trouble Shooting
+- [ ] sign up and get key from "Korea Movie Industry"
+```
+```
