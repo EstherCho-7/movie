@@ -11,10 +11,10 @@ def req(dt="20120101"):
     print(data)
     return code, data
 
-def gen_url(dt="20120101"):
+def gen_url(load_dt="20120101"):
     base_url="http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json"
     key=get_key() 
-    url=f"{base_url}?key={key}&targetDt={dt}"
+    url=f"{base_url}?key={key}&targetDt={load_dt}"
     return url 
 
 def get_key():
@@ -22,8 +22,8 @@ def get_key():
     key=os.getenv("MOVIE_API_KEY")
     return key
 
-def req2df():
-    _, data = req()
+def req2df(load_dt):
+    _, data = req(load_dt)
     l = data['boxOfficeResult']['dailyBoxOfficeList']
 #    l = [
 #            {'rnum':'1', 'rank':'1'},
@@ -34,12 +34,13 @@ def req2df():
     df = pd.DataFrame(l)
     return df 
 
-def list2df():
-    l=req2df()
+def list2df(load_dt='20120101'):
+    l=req2df(load_dt)
     df = pd.DataFrame(l)
     return df
 
-def save2df():
+def save2df(load_dt='20120101'):
+    """"airflow"""
     df=list2df()
     df['load_dt']='20120101'
     print(df.head(5))

@@ -19,7 +19,7 @@ def test_req():
     assert code == 200
 
 def test_dataframe():
-    l=req2df()
+    l=req2df(load_dt="20120101")
     assert len(l)>0
     #v=l[0]
     #assert 'rnum' in v.keys() 
@@ -38,6 +38,8 @@ def test_list2df():
     assert 'movieNm' in df.columns
 
 def test_save2df():
-    df = save2df()
+    df = save2df(load_dt='20120101')
     assert isinstance (df, pd.DataFrame)
     assert 'load_dt' in df.columns
+
+
