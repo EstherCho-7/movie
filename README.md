@@ -13,6 +13,9 @@ $ pip install git+https://github.com/EstherCho-7/movie.git@<BRANCH NAME>
 ```
 $ git clone https://github.com/EstherCho-7/movie.git
 $ cd <DIR>
+$ source .venv/bin/activate
+$ pdm install
+$ pytest
 
 $ # option
 $ pdm venv create
